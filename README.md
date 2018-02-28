@@ -3,8 +3,7 @@ Jira Rest Api OAuth
 
 Sample code demonstrating how to integrate with Jira Rest Api using OAuth.
 
-Workflow
---------
+## Workflow
 
 The basic process for getting up and running with Jira Rest Api OAuth:
 
@@ -13,8 +12,7 @@ The basic process for getting up and running with Jira Rest Api OAuth:
 2. Do the oauth dance
 3. Make jira rest api requests
 
-0. Prerequisites
-----------------
+## 0. Prerequisites
 
 Generate rsa keys to be registered in jira and used when configuring rsa tokens.
 
@@ -23,8 +21,7 @@ Generate rsa keys to be registered in jira and used when configuring rsa tokens.
 ```
 
 
-1. Register link applications
------------------------------
+## 1. Register link applications
 
 Instructions available via https://developer.atlassian.com/cloud/jira/platform/jira-rest-api-oauth-authentication/
 
@@ -49,8 +46,7 @@ Consumer Key `hardcoded-consumer`
 Public Key `contents of rsa.pub` generated in prerequisites
 
 
-2. Do the oauth dance
----------------------
+## 2. Do the oauth dance
 
 Generate OAuth tokens with pre-configured keys and user interactions
 
@@ -61,8 +57,7 @@ Generate OAuth tokens with pre-configured keys and user interactions
 Keep track of generated oauth tokens
 
 
-3. Make jira rest api requests
-------------------------------
+## 3. Make jira rest api requests
 
 Wtih generated oauth tokens, make rest api requests
 
