@@ -28,7 +28,8 @@ install: ## install all the things
 	$(venv_pip_path) install -r requirements.txt
 
 # development
-
+oauth-dance: ## generate oauth tokens
+	$(venv_python_path) ./src/oauth-dance.py --jira-server=$(jira-server)
 
 # test
 test: | isort flake8 ## test all the things
