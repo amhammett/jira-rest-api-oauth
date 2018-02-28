@@ -1,0 +1,10 @@
+cryptography
+jira
+P4
+pbr
+pycrypto
+pyjwt
+
+# test
+isort
+flake8
