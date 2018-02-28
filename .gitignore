@@ -2,6 +2,7 @@
 *.sublime-workspace
 *.swp
 *.swap
+rsa.*
 
 # compiled files
 __pycache__/

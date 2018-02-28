@@ -28,6 +28,10 @@ install: ## install all the things
 	$(venv_pip_path) install -r requirements.txt
 
 # development
+generate-rsa: ## generate rsa private/public keys
+	openssl genrsa -out rsa.pem 1024
+	openssl rsa -in rsa.pem -pubout -out rsa.pub
+
 oauth-dance: ## generate oauth tokens
 	$(venv_python_path) ./src/oauth-dance.py --jira-server=$(jira-server)
 
