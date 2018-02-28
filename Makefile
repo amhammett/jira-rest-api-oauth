@@ -31,6 +31,9 @@ install: ## install all the things
 oauth-dance: ## generate oauth tokens
 	$(venv_python_path) ./src/oauth-dance.py --jira-server=$(jira-server)
 
+oauth-jira-projects: ## query jira for projects
+	$(venv_python_path) ./src/oauth-jira-projects.py --jira-server=$(jira-server) --token=$(token) --token-secret=$(token-secret)
+
 # test
 test: | isort flake8 ## test all the things
 
