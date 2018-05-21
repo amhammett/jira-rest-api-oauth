@@ -34,18 +34,22 @@ def main():
         signature_method=SIGNATURE_RSA,
         verifier=VERIFIER
     )
-    request_token = oauth.fetch_request_token("{}/{}".format(args.jira_server, REQUEST_TOKEN_PATH))
 
-    print("Visit link below to approve oauth")
-    print("{}/{}?oauth_token={}".format(args.jira_server, AUTHORIZE_PATH, request_token['oauth_token']))
+    try:
+        request_token = oauth.fetch_request_token("{}/{}".format(args.jira_server, REQUEST_TOKEN_PATH))
 
-    while raw_input("Press any key to continue after access has been approved..."):
-        pass
+        print("Visit link below to approve oauth")
+        print("{}/{}?oauth_token={}".format(args.jira_server, AUTHORIZE_PATH, request_token['oauth_token']))
 
-    access_token = oauth.fetch_access_token("{}/{}".format(args.jira_server, ACCESS_TOKEN_PATH))
-    print("The tokens below can be used to make requests to the Jira Rest API")
-    print("oauth_token={}".format(access_token['oauth_token']))
-    print("oauth_token_secret={}".format(access_token['oauth_token_secret']))
+        while raw_input("Press any key to continue after access has been approved..."):
+            pass
+
+        access_token = oauth.fetch_access_token("{}/{}".format(args.jira_server, ACCESS_TOKEN_PATH))
+        print("The tokens below can be used to make requests to the Jira Rest API")
+        print("oauth_token={}".format(access_token['oauth_token']))
+        print("oauth_token_secret={}".format(access_token['oauth_token_secret']))
+    except:
+        print("Token Request Denied. Please ensure you have configured Jira.")
 
 
 if __name__ == '__main__':
